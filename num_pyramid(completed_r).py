@@ -1,25 +1,75 @@
-x = input()
-arg = 1
-while int(arg) <= int(x):
-	com = str(str(arg) * int(arg))
-	if len(com) != arg:
-		print(com[:arg])
-	else:
-		print(str(arg) * int(arg))
+# This project is all 'bout string operators.
+# An input text will be processed through chosen string method
+# The string method determined by the user's(me) input
 
-	arg = int(arg) + 1
+cte = '"insert text for conducting our testing:\n"'
+print(len(cte))
 
-# The story of this code.
-# The idea of this code is just to print pyramid of numbers, that has have been inputted by user.
-# The height and width are accorded by the number; higher number means higher pyramid.
-# First the code was just all above the while statement and two lines after: line 8 and line 10.
-# And it was working. right before 10.
-# After 10 and farther increasing in the numbers digits the look of the pyramid had been getting disordered.
-# First I tried to solve this misunderstanding by catching dividable to 10 numbers by %10 but
-# soon realized that was a bad idea; I had have been to catch all 2 and above digit number
-# by adding additional if statement. It was not the way.
-# My saviour showed up in the face of the len() function and lists.
-# All I had to do was to compare the length of the list to the value of 'arg' and cut
-# the needed length of the list.
+request = str(input("task: "))
+if request == "chop":
+    start = int(input())
+    ending = int(input())
+    print(cte[start: ending])
 
-# The end.
+elif request == "upper":
+    print(cte.upper())
+
+elif request == "lower":
+    print(cte.lower())
+
+elif request == "replace":
+    t_object = input("replacing object: ")
+    p_object = input("given object: ")
+    print(cte.replace(t_object, p_object))
+
+elif request == "check":
+    check = input("look for:\n")
+    print(check in cte)
+
+elif request == "check&count":
+    lost = str(input("I look for "))
+    count = 0
+    for z in cte:                # I see now. I have no idea how for loops statement works
+        if z == lost:            # Whatever I do it ends up by spamming by unwanted text
+            count += 1
+    if count > 0:                # Now I have the slightest idea of how it works
+        print(count)
+    else:
+        print("There is no such a character")
+# It's fiiiiiiiiiiiiiiiiiiiiiiiiine
+# Why is it "fine" though? What is even wrong here?
+
+# I don't know why I wrote this comment here nut for now the problem is that I cannot print count properly
+# without spamming the screen with "There is no such a character"
+
+
+elif request == "print":
+    print(cte)
+
+elif request == "list":
+    lT = input("what type of list?\n")
+    if lT == "whole":
+        for w in cte:
+            print(w)
+    elif lT == "a slice":
+        a_s = int(input("the index of the slice?\n"))
+        print(cte[a_s])
+    elif lT == "cut 'til end":
+        print(cte[int(input()):])
+# Here I just got bored and put all in one line
+    elif lT == "cut end to 'til":
+        print(cte[:int(input())])
+
+elif request == "strip":
+    print(cte.strip())
+
+
+
+else:
+   print("finish your code")
+
+# This shit is supposed to work at least somehow. Otherwise, I'm going to use the try function
+# (The try function is a pain in the back)
+
+# Upd: I NEED to use the try function here to cath and deal occurring errors.
+# Mostly input errors: ValueError
