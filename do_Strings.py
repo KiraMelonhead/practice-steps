@@ -1,6 +1,7 @@
 # This project is all 'bout string operators.
 # An input text will be processed through chosen string method
 # The string method determined by the user's(me) input
+# It has to be here words looking statement(for "word" in)
 
 cte = '"insert text for conducting our testing:\n"'
 print(len(cte))
