@@ -40,15 +40,11 @@ elif request == "check":                # FKN helper erased my comment
     print(check in cte)
 
 elif request == "check&count":
-    lost = str(input("I look for "))
-    count = 0
-    for z in cte:                # I see now. I have no idea how for loops statement works
-        if z == lost:            # Whatever I do it ends up by spamming by unwanted text
-            count += 1
-    if count > 0:                # Now I have the slightest idea of how it works
-        print(count)
+    lost = cte.count(input("looking for: "))
+    if lost == 0:
+        print("There is no such an object")
     else:
-        print("There is no such a character")
+        print(lost)
 
 
 elif request == "print":
